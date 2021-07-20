@@ -1,4 +1,4 @@
-const Clientes = require('../models/mClientes')
+const Produtos = require('../models/mClientes')
 
 module.exports = app => {
     app.get('/produto',(req, res) => {
