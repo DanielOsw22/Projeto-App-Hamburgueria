@@ -1,0 +1,22 @@
+{
+  "name": "ProjetoMod4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
