@@ -1,8 +1,10 @@
 const customExpress = require('./config/customExpress')
 const db = require('./infra/dbSqlite')
-const Tabelas = require('./infra/tabelas')
+
+const router = require('./routes/rProdutos') 
 
 const app = customExpress()
-app.listen(3000, () => console.log("servidor rodando na porta 3000"))
+app.use('/produto',router)
 
-db.run(Tabelas.produtos)
+
+app.listen(3000, () => console.log("servidor rodando na porta 3000"))
