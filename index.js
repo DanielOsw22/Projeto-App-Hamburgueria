@@ -1,10 +1,9 @@
-const customExpress = require('./config/customExpress')
-const db = require('./infra/dbSqlite')
+const config = require ('./infra/config');
+const bancoDeDados = require ('./infra/bancoDeDados');
+const Tabelas = require('./infra/tabelaPedido')
+const app = config()
 
-const router = require('./routes/rProdutos') 
+app.listen(3000, () => console.log("Servidor nasceu!"))
 
-const app = customExpress()
-app.use('/produto',router)
-
-
-app.listen(3000, () => console.log("servidor rodando na porta 3000"))
+const tabela = new Tabelas()
+bancoDeDados.run(tabela.pedidos)

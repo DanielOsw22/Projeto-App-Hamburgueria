@@ -1,23 +1,20 @@
 {
-  "name": "ProjetoMod4",
+  "name": "hamburgueria",
   "version": "1.0.0",
-  "description": "",
+  "description": "projeto do modulo 4",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "giovana assis",
+  "license": "ISC",
   "dependencies": {
     "consign": "^0.1.6",
     "express": "^4.17.1",
-    "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
     "nodemon": "^2.0.12"
-  },
-  "scripts": {
-    "test": "jest",
-    "start": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
