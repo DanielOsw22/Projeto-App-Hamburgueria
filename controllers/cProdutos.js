@@ -1,4 +1,6 @@
 const Produtos = require('../models/mProdutos')
+const path = require('path')
+const __dirname2 = path.resolve(path.dirname(""))
 
 class cProdutos {
     async listar (res) {
@@ -19,7 +21,7 @@ class cProdutos {
     async cadastrar (req,res) {
         const {descricao, preco, quantidade, ID_fornecedor} = req.body
         const novoProd = await Produtos.create({descricao, preco, quantidade, ID_fornecedor})
-        res.status(201).json(novoProd)
+        res.status(201).sendFile(__dirname2+"/views/produtoCadastro.html")
     }
 
     async deletar (req,res) {
