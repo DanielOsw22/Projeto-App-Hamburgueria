@@ -21,7 +21,7 @@ class cProdutos {
     async cadastrar (req,res) {
         const {descricao, preco, quantidade, ID_fornecedor} = req.body
         const novoProd = await Produtos.create({descricao, preco, quantidade, ID_fornecedor})
-        res.status(201).sendFile(__dirname2+"/views/produtoCadastro.html")
+        res.status(201).sendFile(__dirname2+"/public/views/produtoCadastro.html")
     }
 
     async deletar (req,res) {
