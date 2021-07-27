@@ -10,9 +10,11 @@ class cProdutos {
 
     async buscar (req,res) {
         const {ID_produto} = req.body
+        const teste = ID_produto
+        console.log(teste)
         const result = await Produtos.findAll({
             where: {
-                ID_produto: ID_produto
+                ID_produto: teste
             }
         })
         res.status(200).json(result)
@@ -21,7 +23,7 @@ class cProdutos {
     async cadastrar (req,res) {
         const {descricao, preco, quantidade, ID_fornecedor} = req.body
         const novoProd = await Produtos.create({descricao, preco, quantidade, ID_fornecedor})
-        res.status(201).sendFile(__dirname2+"/public/views/produtoCadastro.html")
+        res.status(201).sendFile(__dirname2+"/public/views/Sucesso.html")
     }
 
     async deletar (req,res) {
@@ -31,7 +33,7 @@ class cProdutos {
                 ID_produto: ID_produto
             }
         })
-        res.status(200).json(ID_produto)
+        res.status(201).sendFile(__dirname2+"/public/views/Sucesso.html")
     }
 
     async atualizar (req,res) {
@@ -43,12 +45,12 @@ class cProdutos {
                 ID_produto
             }
         })
-        res.status(200).json(ID_produto)
+        res.status(201).sendFile(__dirname2+"/public/views/Sucesso.html")
     }
 
     async deletaTab (res) {
         const result = await Produtos.drop()
-        res.status(200).json(result)
+        res.status(201).sendFile(__dirname2+"/public/views/Sucesso.html")
     }
 }
 

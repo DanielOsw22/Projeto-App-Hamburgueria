@@ -4,12 +4,22 @@ const path = require('path')
 
 module.exports = () => {
     const app = express()
-    const router = require('../routes/rProdutos') 
+    const pRouter = require('../routes/rProdutos') 
+    const fRouter = require('../routes/rFuncionarios') 
+    const fornRouter = require('../routes/rFornecedores')
+    const pedRouter = require('../routes/rPedidos')
+    const cRouter = require('../routes/rClientes')
 
     app.use(express.urlencoded({ extended: true }))
     app.use(express.json())
     app.use(express.static('public'));  
-    app.use('/produto',router)
+
+    app.use('/produto',pRouter)
+    app.use('/funcionario',fRouter)
+    app.use('/fornecedor',fornRouter)
+    app.use('/pedido',pedRouter)
+    app.use('/cliente',cRouter)
+
 
     return app
 }

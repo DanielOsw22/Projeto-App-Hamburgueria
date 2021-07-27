@@ -1,34 +1,34 @@
 const {Sequelize, DataTypes} = require('sequelize')
 const db = require('../infra/dbSqlite')
 
-const Produtos = db.define('produtos',{
-    ID_produto: {
+const Pedidos = db.define('pedidos',{
+    ID_pedido: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
-    descricao: {
-        type: DataTypes.STRING(200),
+    cpf_func: {
+        type: DataTypes.STRING(11),
         allowNull: false
     },
-    preco: {
+    itens: {
+        type: DataTypes.STRING(250),
+        allowNull: false
+    },
+    valor: {
         type: DataTypes.FLOAT,
         allowNull: false
     },
-    quantidade: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    ID_fornecedor:{
+    ID_cliente:{
         type: DataTypes.INTEGER,
         allowNull: false
     }
 })
 
 async function criarTabelas(){
-    await Produtos.sync()
+    await Pedidos.sync()
 }
 criarTabelas()
 
-module.exports = Produtos
+module.exports = Pedidos
