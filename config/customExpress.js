@@ -5,6 +5,8 @@ const cors = require('cors')
 
 module.exports = () => {
     const app = express()
+    app.use(cors())
+
     const pRouter = require('../routes/rProdutos') 
     const fRouter = require('../routes/rFuncionarios') 
     const fornRouter = require('../routes/rFornecedores')
@@ -20,7 +22,7 @@ module.exports = () => {
     app.use('/fornecedor',fornRouter)
     app.use('/pedido',pedRouter)
     app.use('/cliente',cRouter)
-    app.use(cors())
+    
 
 
     return app
