@@ -1,6 +1,7 @@
 const express = require('express')
 const consign = require('consign')
 const path = require('path')
+const cors = require('cors')
 
 module.exports = () => {
     const app = express()
@@ -19,6 +20,7 @@ module.exports = () => {
     app.use('/fornecedor',fornRouter)
     app.use('/pedido',pedRouter)
     app.use('/cliente',cRouter)
+    app.use(cors())
 
 
     return app
